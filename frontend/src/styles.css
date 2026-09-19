@@ -16,4 +16,9 @@ th,td { text-align:left; padding:0.4rem; border-bottom:1px solid #243860; }
 button { background: var(--accent); border:0; padding:0.4rem 0.85rem; border-radius:6px; font-weight:600; cursor:pointer; color:#051018; }
 .hero-num { font-size:2.2rem; font-weight:700; color: var(--accent); }
 .muted { color: var(--muted); }
+.warn-text { color: #ffb454; font-weight: 600; }
+.error-text { color: #ff6b6b; font-weight: 600; }
+.badge-ok { background:#1d3a2c; color:#5bd98a; border:1px solid #2f6b48; padding:0.1rem 0.5rem; border-radius:999px; font-size:0.8rem; }
+.badge-off { background:#3d1f1f; color:#ff8a8a; border:1px solid #7a3535; padding:0.1rem 0.5rem; border-radius:999px; font-size:0.8rem; }
+button:disabled { opacity:.45; cursor: not-allowed; }
 input, select { background:#0a1528; border:1px solid var(--muted); color:var(--text); padding:0.35rem; border-radius:4px; }

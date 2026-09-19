@@ -15,6 +15,17 @@ def init_db():
     CREATE TABLE IF NOT EXISTS edges(a TEXT, b TEXT);
     CREATE TABLE IF NOT EXISTS fare_rules(id INTEGER PRIMARY KEY, max_hops INTEGER, price REAL);
     CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT);
+    CREATE TABLE IF NOT EXISTS edge_disruptions(
+        id INTEGER PRIMARY KEY,
+        a TEXT NOT NULL,
+        b TEXT NOT NULL,
+        reason TEXT NOT NULL DEFAULT '',
+        active INTEGER NOT NULL DEFAULT 1,
+        created_at TEXT NOT NULL,
+        released_at TEXT
+    );
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_edge_disruptions_active
+        ON edge_disruptions(a, b) WHERE active=1;
     CREATE TABLE IF NOT EXISTS calc_runs(
         id INTEGER PRIMARY KEY, kind TEXT, input_json TEXT, result_json TEXT, created_at TEXT);
     """
